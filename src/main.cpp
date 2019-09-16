@@ -3,7 +3,7 @@
 #include <ESP8266WiFi.h>
 #include <config.h>
 
-void setup() {
+void setup_wifi() {
   WiFi.begin(SSID, PASSWORD);
   Serial.println("");
 
@@ -19,6 +19,11 @@ void setup() {
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
 
+}
+
+void setup() {
+  Serial.begin(115200);
+  setup_wifi();
 }
 
 void loop() {
